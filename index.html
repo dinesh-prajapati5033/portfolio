@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh Prajapati - Sr. Magento Developer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for dark theme and smooth scrolling */
+        :root {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+        }
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #d1d5db; /* Light gray */
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #3b82f6; /* Blue accent */
+            border-radius: 9999px;
+        }
+        .nav-link.active {
+            color: #3b82f6; /* Blue for active link */
+            border-bottom: 2px solid #3b82f6;
+        }
+        .card {
+            background-color: #1f2937; /* Darker background for cards */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* Blue glow on hover */
+            transform: translateY(-2px);
+        }
+        .skill-bar-container {
+            background-color: #374151; /* Gray for container */
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-[#121212]/95 backdrop-blur-sm shadow-lg">
+        <nav id="navbar" class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-extrabold text-[#3b82f6]">DINESH P.</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#hero" class="nav-link text-gray-300 hover:text-blue-500 transition duration-300 p-2">HOME</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-blue-500 transition duration-300 p-2">ABOUT</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-blue-500 transition duration-300 p-2">PROJECTS</a>
+                <a href="#education-awards" class="nav-link text-gray-300 hover:text-blue-500 transition duration-300 p-2">EDUCATION</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-blue-500 transition duration-300 p-2">SKILLS</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-blue-500 transition duration-300 p-2">CONTACT</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-blue-500">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer (Hidden by default) -->
+    <div id="mobile-menu" class="hidden fixed top-[68px] left-0 w-full bg-[#121212] z-40 shadow-xl md:hidden">
+        <div class="flex flex-col space-y-2 p-4 font-medium">
+            <a href="#hero" class="mobile-nav-link text-gray-300 hover:bg-gray-800 p-2 rounded-md transition duration-200">HOME</a>
+            <a href="#about" class="mobile-nav-link text-gray-300 hover:bg-gray-800 p-2 rounded-md transition duration-200">ABOUT</a>
+            <a href="#projects" class="mobile-nav-link text-gray-300 hover:bg-gray-800 p-2 rounded-md transition duration-200">PROJECTS</a>
+            <a href="#education-awards" class="mobile-nav-link text-gray-300 hover:bg-gray-800 p-2 rounded-md transition duration-200">RESUME</a>
+            <a href="#skills" class="mobile-nav-link text-gray-300 hover:bg-gray-800 p-2 rounded-md transition duration-200">SKILLS</a>
+            <a href="#contact" class="mobile-nav-link text-gray-300 hover:bg-gray-800 p-2 rounded-md transition duration-200">CONTACT</a>
+        </div>
+    </div>
+    
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12">
+            <div class="text-center w-full">
+                <p class="text-xl text-gray-400 mb-4">Hello, I'm</p>
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-white mb-4">DINESH PRAJAPATI</h1>
+                <div class="text-2xl sm:text-3xl font-medium text-[#3b82f6] mb-8">
+                    <span id="typing-text"></span>
+                    <span class="inline-block w-1 h-8 bg-[#3b82f6] animate-pulse"></span>
+                </div>
+                <div class="space-x-4">
+                    <a href="#contact" class="inline-block bg-[#3b82f6] text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 shadow-lg">Connect Now</a>
+                    <a href="#education-awards" class="inline-block bg-gray-700 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-600 transition duration-300 shadow-lg">View Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-16">
+            <h2 class="section-header">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1">
+                    <!-- Placeholder for profile image -->
+                    <div class="w-48 h-48 mx-auto md:mx-0 bg-gray-700 rounded-full flex items-center justify-center text-4xl font-bold text-gray-300 border-4 border-blue-500">
+                        DP
+                    </div>
+                </div>
+                <div class="md:col-span-2 space-y-4">
+                    <h3 class="text-3xl font-bold text-white">Sr. Magento Developer & Team Lead</h3>
+                    <p class="text-gray-400 leading-relaxed text-lg">
+                      <p class="text-gray-400 leading-relaxed text-lg">
+                        I have over <span class="font-bold text-white">6 years of experience</span> working with Magento 2 and am an <span class="font-bold text-white">Adobe Certified Professional - Magento 2 Developer</span>. I am proficient across Community Edition, Enterprise Edition, and <span class="font-bold text-white">Adobe Commerce Cloud</span> (Starter & Pro environments). My core expertise includes <span class="font-bold text-white">backend customization, theme development</span>, and the creation of <span class="font-bold text-white">custom Magento 2 extensions</span>. I specialize in managing complex <span class="font-bold text-white">multi-website and multi-store configurations</span>, performing <span class="font-bold text-white">Magento 1 to 2 migrations</span>, and executing <span class="font-bold text-white">Magento 2</span> version upgrades. Crucially, I focus on <span class="font-bold text-white">optimizing stores for speed and Core Web Vitals</span> through advanced techniques, including implementation of the <span class="font-bold text-white">lightning-fast Hyvä theme</span>. I ensure seamless system integration using <span class="font-bold text-white">REST API and GraphQL</span>.
+                      </p>
+                    <div class="text-lg space-y-2">
+                        <p><i data-lucide="mail" class="inline-block w-5 h-5 mr-3 text-[#3b82f6]"></i> Email: dineshprajapati5033@gmail.com</p>
+                        <p><i data-lucide="phone" class="inline-block w-5 h-5 mr-3 text-[#3b82f6]"></i> Phone: 8140747573</p>
+                        <p><i data-lucide="map-pin" class="inline-block w-5 h-5 mr-3 text-[#3b82f6]"></i> Location: Ahmedabad</p>
+                        <p><i data-lucide="award" class="inline-block w-5 h-5 mr-3 text-[#3b82f6]"></i> Achievement: Adobe certified professional - Adobe Commerce Developer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Projects Section (UPDATED) -->
+        <section id="projects" class="py-16">
+            <h2 class="section-header">Key Projects & Customizations</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: fromwow.com - Migration & Core Development -->
+                <div class="card p-6 border-t-4 border-blue-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <i data-lucide="code-square" class="w-8 h-8 text-blue-400"></i>
+                        <a href="https://fromwow.com" target="_blank" class="text-gray-400 hover:text-blue-300 flex items-center space-x-1 text-sm">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white">fromwow.com - M1/M2 Migration</h4>
+                    <p class="text-sm text-gray-500 flex items-center mt-1 mb-3"><i data-lucide="briefcase" class="w-4 h-4 mr-1"></i> Rocktechnolabs</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm pt-2">
+                        <li>Executed full <span class="font-bold text-white">Magento 1 to Magento 2 migration</span> with smooth delta sync.</li>
+                        <li>Managed <span class="font-bold text-white">migrations and upgraded Magento 2</span> to the latest stable version.</li>
+                        <li>Developed custom registration forms with specialized email integration.</li>
+                        <li>Ensured compatibility across all third-party extensions.</li>
+                        <li>Conducted comprehensive code audit and optimization.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2: fulcrumparts.com - Cloud & Multi-Store -->
+                <div class="card p-6 border-t-4 border-blue-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <i data-lucide="cloud" class="w-8 h-8 text-blue-400"></i>
+                        <a href="https://www.fulcrumparts.com" target="_blank" class="text-gray-400 hover:text-blue-300 flex items-center space-x-1 text-sm">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white">fulcrumparts.com - Adobe Commerce Cloud</h4>
+                    <p class="text-sm text-gray-500 flex items-center mt-1 mb-3"><i data-lucide="briefcase" class="w-4 h-4 mr-1"></i> Rocktechnolabs</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm pt-2">
+                        <li>Migrated server from <span class="font-bold text-white">Adobe Commerce Cloud Starter to Pro environment</span>.</li>
+                        <li>Set up and managed complex <span class="font-bold text-white">multi-website and multi-store</span> configurations.</li>
+                        <li>Created and implemented multiple custom themes for different websites.</li>
+                        <li>Maintained strict version control using the Git Flow workflow.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3: worldsim.com / Store Performance & Hyvä -->
+                <div class="card p-6 border-t-4 border-blue-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <i data-lucide="zap" class="w-8 h-8 text-blue-400"></i>
+                        <a href="https://www.worldsim.com" target="_blank" class="text-gray-400 hover:text-blue-300 flex items-center space-x-1 text-sm">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white">worldsim.com - Top-Up Management & Backend</h4>
+                    <p class="text-sm text-gray-500 flex items-center mt-1 mb-3"><i data-lucide="briefcase" class="w-4 h-4 mr-1"></i> Rocktechnolabs</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm pt-2">
+                      <li>Customized the Product Detail Page (PDP) to support complex custom options.</li>
+                      <li>Implemented <span class="font-bold text-white">AJAX</span> to dynamically load configurable options based on selections.</li>
+                      <li>Custom theme development and homepage customization (banners, products).</li>
+                      <li>Conducted comprehensive code audit and optimization.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4: innoplast.com - Advanced PDP & Feature Customization -->
+                <div class="card p-6 border-t-4 border-blue-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <i data-lucide="layout-template" class="w-8 h-8 text-blue-400"></i>
+                         <a href="https://www.innoplast.com" target="_blank" class="text-gray-400 hover:text-blue-300 flex items-center space-x-1 text-sm">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white">innoplast.com - Advanced PDP Functionality</h4>
+                    <p class="text-sm text-gray-500 flex items-center mt-1 mb-3"><i data-lucide="briefcase" class="w-4 h-4 mr-1"></i> Rocktechnolabs</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm pt-2">
+                        <li>Developed and refined the <span class="font-bold text-white">top-up management page</span> to streamline the recharge process.</li>
+                        <li>Backend customization and enhancement of core Magento functionalities.</li>
+                        <li>Integration of <span class="font-bold text-white">REST API and GraphQL</span> for system communication.</li>
+                        <li>Worked on currency management and multi-currency support.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5: Top-Up Management & Backend Tools (onbit.pt) -->
+                <div class="card p-6 border-t-4 border-blue-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <i data-lucide="server-cog" class="w-8 h-8 text-blue-400"></i>
+                        <a href="https://onbit.pt" target="_blank" class="text-gray-400 hover:text-blue-300 flex items-center space-x-1 text-sm">
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white">onbit.pt - Speed & Hyvä Implementation</h4>
+                    <p class="text-sm text-gray-500 flex items-center mt-1 mb-3"><i data-lucide="briefcase" class="w-4 h-4 mr-1"></i> Rocktechnolabs</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm pt-2">
+                      <li>Implemented the <span class="font-bold text-white">Hyvä theme</span> for optimized load times and enhanced UX.</li>
+                      <li>Significantly improved <span class="font-bold text-white">Core Web Vitals</span> (FCP, LCP, INP, CLS, TTFB).</li>
+                      <li>Frontend improvements: mobile menu, Google Review block.</li>
+                      <li>Worked on site speed optimization and code audits.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 6: Custom Extension Development -->
+                <div class="card p-6 border-t-4 border-blue-400">
+                    <div class="flex justify-between items-start mb-3">
+                        <i data-lucide="plug" class="w-8 h-8 text-blue-400"></i>
+                        <span class="text-gray-400 flex items-center space-x-1 text-sm">
+                            <i data-lucide="lock" class="w-4 h-4"></i> Custom/Internal
+                        </span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white">Custom Extension Development & Audits</h4>
+                    <p class="text-sm text-gray-500 flex items-center mt-1 mb-3"><i data-lucide="briefcase" class="w-4 h-4 mr-1"></i> Rocktechnolabs</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm pt-2">
+                        <li>Full cycle of <span class="font-bold text-white">custom Magento 2 extension development</span> for unique features.</li>
+                        <li>Customization of third-party extensions to meet specific client needs.</li>
+                        <li>Extensive code review and maintenance for long-term project stability.</li>
+                        <li>Managed large codebases, ensuring high-performance and maintainability.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Education & Awards Section -->
+        <section id="education-awards" class="py-16">
+            <h2 class="section-header">Education & Awards</h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+                
+                <!-- Education -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-white border-l-4 border-[#3b82f6] pl-4 mb-4">Academic Background</h3>
+
+                    <div class="card p-6">
+                        <span class="text-sm font-medium text-[#3b82f6]">2017 - 2019</span>
+                        <h4 class="text-xl font-semibold text-white mt-1">Master of Computer Science (CA & IT)</h4>
+                        <p class="text-gray-400">HNGU, Patan (Grade: B+)</p>
+                    </div>
+                    
+                    <div class="card p-6">
+                        <span class="text-sm font-medium text-[#3b82f6]">2014 - 2017</span>
+                        <h4 class="text-xl font-semibold text-white mt-1">Bachelor of Computer Science (CA & IT)</h4>
+                        <p class="text-gray-400">HNGU, Patan (Grade: B)</p>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="space-y-8">
+                  <h3 class="text-2xl font-bold text-white border-l-4 border-[#3b82f6] pl-4 mb-4">Certifications & Achievements</h3>
+                  <div class="card p-6">
+                      <h4 class="text-xl font-semibold text-white mt-1">Adobe Certified Professional</h4>
+                      <p class="text-gray-400">
+                          Adobe Commerce Developer - 
+                          <a 
+                              href="https://www.credly.com/earner/earned/badge/96c2fd09-5499-456e-a2bd-eeb727225a07" 
+                              target="_blank" 
+                              class="text-blue-400 hover:text-blue-300 transition duration-150"
+                          >
+                              View Credly Badge
+                          </a>
+                      </p>
+                  </div>
+              </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Skills Section -->
+        <section id="skills" class="py-16">
+            <h2 class="section-header">Technical Skills</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Category 1: Magento & PHP -->
+                <div class="card p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-[#3b82f6]">Magento & PHP Core</h3>
+                    <div class="space-y-2">
+                        <p class="font-medium">Magento 2 Development</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 95%;"></div>
+                        </div>
+                        <p class="font-medium">Core PHP / OOPs / Advanced PHP</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 90%;"></div>
+                        </div>
+                        <p class="font-medium">Adobe Commerce Cloud / Hyvä</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-yellow-500 h-full rounded-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Frontend & Scripting -->
+                <div class="card p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-[#3b82f6]">Frontend & Databases</h3>
+                    <div class="space-y-2">
+                        <p class="font-medium">HTML, CSS, JavaScript, jQuery, Ajax</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 95%;"></div>
+                        </div>
+                        <p class="font-medium">SQL / MySQL / Postgresql</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-yellow-500 h-full rounded-full" style="width: 80%;"></div>
+                        </div>
+                        <p class="font-medium">REST API / GraphQL</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Tools & Version Control -->
+                <div class="card p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-[#3b82f6]">Tools & Workflow</h3>
+                    <div class="space-y-2">
+                        <p class="font-medium">GIT (GitHub, GitLab, Bitbucket)</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 90%;"></div>
+                        </div>
+                        <p class="font-medium">Project Management (Jira, Asana, ClickUp)</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-yellow-500 h-full rounded-full" style="width: 85%;"></div>
+                        </div>
+                        <p class="font-medium">OS/Environment (Linux Mint, Ubuntu)</p>
+                        <div class="skill-bar-container h-2 rounded-full">
+                            <div class="bg-green-500 h-full rounded-full" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contact Section -->
+        <section id="contact" class="py-16">
+            <h2 class="section-header">Connect With Me</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <p class="text-center text-gray-400 text-lg mb-8">
+                    I am currently available for new projects and opportunities. Let's connect directly via my preferred channels.
+                </p>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                    
+                    <!-- Card 1: Email -->
+                    <a href="mailto:dineshprajapati5033@gmail.com" class="card p-6 flex flex-col items-center hover:bg-gray-800 transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="mail" class="w-8 h-8 text-[#3b82f6] mb-3"></i>
+                        <h4 class="font-semibold text-white">Email</h4>
+                        <span class="text-sm text-gray-400 break-all">dineshprajapati5033@gmail.com</span>
+                    </a>
+                    
+                    <!-- Card 2: Phone -->
+                    <a href="tel:8140747573" class="card p-6 flex flex-col items-center hover:bg-gray-800 transition duration-300 transform hover:scale-[1.02]">
+                        <i data-lucide="phone-call" class="w-8 h-8 text-[#3b82f6] mb-3"></i>
+                        <h4 class="font-semibold text-white">Call / SMS</h4>
+                        <span class="text-sm text-gray-400">8140747573</span>
+                    </a>
+
+                    <!-- Card 3: LinkedIn -->
+                    <a href="https://www.linkedin.com/in/dineshprajapati28/" target="_blank" class="card p-6 flex flex-col items-center bg-[#1f2937] hover:bg-blue-900/40 transition duration-300 transform hover:scale-[1.02]">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mb-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.342-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        <h4 class="font-semibold text-white">LinkedIn</h4>
+                        <span class="text-sm text-gray-400">Connect Professionally</span>
+                    </a>
+
+                    <!-- Card 4: WhatsApp -->
+                    <a href="https://wa.me/918140747573" target="_blank" class="card p-6 flex flex-col items-center bg-[#1f2937] hover:bg-green-700/40 transition duration-300 transform hover:scale-[1.02]">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mb-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.03 3.001c-4.974 0-9.006 4.032-9.006 9.006 0 1.571.411 3.125 1.192 4.512l-1.42 5.163 5.344-1.39c1.296.657 2.753.992 4.09 1.018l.006.002c4.974 0 9.006-4.032 9.006-9.006.001-4.974-4.032-9.006-9.006-9.006zm4.722 13.921l-.22.122c-1.353.754-3.037.994-4.821.492-3.136-.848-4.887-4.14-4.887-6.907 0-.742.195-1.517.585-2.213l.11-.194.34-.602c.005-.008.01-.016.015-.024.114-.158.263-.3.447-.432l.092-.066c.108-.078.225-.137.346-.178l.211-.072c.01-.004.02-.007.03-.01.077-.024.155-.038.233-.046l.492-.02c.01-.002.02-.002.03-.004h.015c.162-.001.325.003.487.012l.21.01.218.012c.068.004.135.01.202.018.115.014.229.03.342.049.03.005.06.012.09.02l.504.148c.112.033.224.072.335.116l.206.095c.22.102.434.223.639.356l.16.105c.216.14.425.298.627.472l.142.138c.231.21.455.44.664.686l.14.17c.23.279.44.577.636.896l.16.275c.174.304.335.617.48.939l.117.262c.118.267.227.538.326.814l.056.166c.074.24.134.484.18.732l.068.327c.046.223.08.45.099.68l.004.053c.01.127.014.253.014.381.002.261-.006.522-.025.782l-.01.134c-.03.468-.112.934-.236 1.393l-.117.426c-.16.582-.387 1.157-.68 1.713l-.22.404c-.394.733-.902 1.442-1.523 2.115l-.478.472c-.443.435-.918.825-1.423 1.168l-1.076.67c-.206.128-.423.238-.65.328l-.128.046c-.058.02-.116.037-.174.052l-.462.114c-.308.077-.618.134-.93.167l-.18.005c-.204.02-.409.03-.615.03z"/>
+                        </svg>
+                        <h4 class="font-semibold text-white">WhatsApp</h4>
+                        <span class="text-sm text-gray-400">Direct Message</span>
+                    </a>
+                    
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-6 border-t border-gray-700 text-center text-gray-400">
+        <p>&copy; 2025 Dinesh Prajapati. All rights reserved. | Built with HTML, Tailwind CSS, & JS.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu, Active Navigation, and Typing Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // --- Typing Effect for Hero ---
+            const textElement = document.getElementById('typing-text');
+            const roles = ["Sr. Magento Developer", "Team Lead", "Adobe Certified Professional"];
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentRole = roles[roleIndex];
+                const typeSpeed = isDeleting ? 50 : 150;
+                const delay = isDeleting ? 1000 : 2000;
+
+                textElement.textContent = currentRole.substring(0, charIndex);
+
+                if (!isDeleting && charIndex < currentRole.length) {
+                    charIndex++;
+                } else if (isDeleting && charIndex > 0) {
+                    charIndex--;
+                }
+
+                if (!isDeleting && charIndex === currentRole.length) {
+                    isDeleting = true;
+                    setTimeout(type, delay);
+                    return;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+            type();
+
+
+            // --- Active Navigation Highlighting ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50px', // Adjust margin to better detect section
+                threshold: 0.5 
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const link = document.querySelector(`.nav-link[href="#${id}"]`);
+                    const mobileLink = document.querySelector(`.mobile-nav-link[href="#${id}"]`);
+
+                    if (entry.isIntersecting) {
+                        // Remove active class from all links
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        mobileLinks.forEach(l => l.classList.remove('active'));
+                        
+                        // Add active class to the current section's link
+                        if (link) link.classList.add('active');
+                        if (mobileLink) mobileLink.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
